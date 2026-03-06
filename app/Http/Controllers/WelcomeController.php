@@ -18,7 +18,7 @@ class WelcomeController extends Controller
     public function index()
     {
         $homeherobanners = HomeHeroBanner::all();
-        $products = Product::all();
+        $products = Product::where('published',true)->get();
         $abouts = About::all();
         $articles = Article::orderBy('created_at', 'desc')->limit(5)->get();
         // $services = Service::all();

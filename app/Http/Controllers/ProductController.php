@@ -54,7 +54,7 @@ class ProductController extends Controller
     public function view(Category $category, Product $product)
     {
         $product->load(['prices', 'categories', 'images']);
-        $products = Product::all();
+        $products = Product::where('published',true)->get();
         $categorySlug = $product->categories->first()->slug ?? null;
         return view('product.view', [
             'product' => $product,

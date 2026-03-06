@@ -14,7 +14,7 @@ class ContactController extends Controller
 {
     public function create()
     {
-        $products = Product::all();
+        $products = Product::where('published',true)->get();
         return view('contact.contact', ['products' => $products]);
     }
 

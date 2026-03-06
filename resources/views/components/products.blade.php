@@ -4,7 +4,7 @@
     <div class="container flex flex-col gap-6 py-12">
         <div class="treatments splide">
             <h3>{{ $header_title }}</h3>
-            <p class="text-large">Book professional massage from monday to friday.</p>
+            <!-- <p class="text-large">Book professional massage from monday to friday.</p> -->
             <div class="splide__track">
                 <ul class="splide__list">
                     @foreach ($products->filter(fn($product) => $product->categories->contains('name', 'Treatments')) as $product)
