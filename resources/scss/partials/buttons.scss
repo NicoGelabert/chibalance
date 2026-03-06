@@ -3,8 +3,8 @@
 .btn{
     @apply w-fit flex gap-2 items-center justify-center font-medium uppercase text-gray_50 leading-none transition-all
     rounded-md sm:rounded-lg font-sans_serif
-    text-xs sm:text-sm md:text-base
-    px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3;
+    text-xs sm:text-sm md:text-sm
+    px-4 py-2;
     svg{
         @apply h-auto fill-terciary max-h-4
         w-4 sm:w-5 md:w-6;

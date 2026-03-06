@@ -21,9 +21,9 @@
         <div>
             <x-button href="/intake-form" class="btn btn-secondary">intake <x-icons.login /></x-button>
         </div>
-        <div>
-            <x-button href="https://calendly.com/chibalancetherapies" target="_blank" class="btn btn-primary">book <x-icons.booking /></x-button>
-        </div>
+        <!-- <div>
+            <x-button href="https://wa.me/353852727422?text={{ urlencode('Hello! I would like more information about your treatments') }}" target="_blank" class="btn btn-primary">whatsapp <x-icons.whatsapp /></x-button>
+        </div> -->
         <x-hamburguer />
     </div>
     <!--/ Responsive Menu -->

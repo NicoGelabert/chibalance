@@ -47,7 +47,7 @@
                             </div>
                             <h5 class="w-fit">{{ product.title }}</h5>
                             <div class="flex gap-4 card-buttons">
-                                <a v-if="product.link" :href="product.link" target="_blank" class="btn btn-primary btn-products_list"><span>Book </span><BookIcon /></a>
+                                <a :href="'https://wa.me/353852727422?text=' + encodeURIComponent('Hello! I would like more information about ' + product.title)" target="_blank" class="btn btn-primary btn-products_list"><span>Whatsapp </span><WhatsappIcon /></a>
                                 <a :href="'/all/' + product.categories[0]?.slug + '/' + product.slug" class="btn btn-secondary btn-products_list"><span>See More </span><SendIcon /></a>
                             </div>
                         </div>
@@ -62,12 +62,14 @@
 import axios from 'axios';
 import BookIcon from '../icons/BookIcon.vue';
 import SendIcon from '../icons/SendIcon.vue';
+import WhatsappIcon from '../icons/WhatsappIcon.vue';
 
 export default {
     components: {
         // Registra el componente
         BookIcon,
         SendIcon,
+        WhatsappIcon,
     },
     data() {
         return {

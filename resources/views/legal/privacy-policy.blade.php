@@ -1,123 +1,126 @@
 <x-app-layout>
     <div class="flex flex-col justify-center gap-12 max-w-screen-xl px-4 py-32 mx-auto md:px-16 overflow-hidden">
-        <h3>{{ __('Privacy Policy') }}</h3>
-
+        <h3>{{ __('Cookies & Privacy Policy') }}</h3>
         <p>{{ __('Last updated: February, 2025') }}</p>
 
         <div class="flex flex-col gap-4">
             <h6>{{ __('1. General Information') }}</h6>
-            <p>{{ __('Chibalancetherapies.com, as the data controller, is committed to user privacy and ensures that personal data collected will be processed in accordance with the General Data Protection Regulation (GDPR) and other applicable regulations.') }}</p>
+
+            <p>{{ __('Chibalancetherapies.com is committed to protecting your privacy and ensuring that your personal data is handled in accordance with the General Data Protection Regulation (GDPR) and applicable data protection laws in Ireland.') }}</p>
+
+            <p>{{ __('For the purposes of data protection legislation, Chi Balance Therapies acts as the data controller of the personal information collected through this website.') }}</p>
         </div>
 
         <div class="flex flex-col gap-4">
-            <h6>{{ __('2. Data Collected') }}</h6>
-            
-            <p>{{ __('We collect the following personal data through our forms:') }}</p>
+            <h6>{{ __('2. Data We Collect') }}</h6>
 
-            <div>
-                <p class="strong">{{ __('Contact Form:') }}</p>
-                <ul class="list-disc pl-12">
-                    <li><p>{{ __('Name') }}</p></li>
-                    <li><p>{{ __('Email') }}</p></li>
-                    <li><p>{{ __('Phone') }}</p></li>
-                    <li><p>{{ __('Message') }}</p></li>
-                </ul>
-            </div>
+            <p>{{ __('We may collect personal information through the following methods:') }}</p>
 
-            <div>
-                <p class="strong">{{ __('Automatically via Cookies:') }}</p>
-                <ul class="list-disc pl-12">
-                    <li><p>{{ __('Browsing data (IP address, device, visit duration).') }}</p></li>
-                    <li><p>{{ __('Cookies: XSRF-TOKEN, _ga, _ga_9Q6H0QETRF, chibalance_session, laravel_cookie_consent, ls_smartpush.') }}</p></li>
-                </ul>
-            </div>
+            <p><strong>{{ __('Contact Forms') }}</strong></p>
+
+            <ul class="list-disc pl-12">
+                <li><p>{{ __('Name') }}</p></li>
+                <li><p>{{ __('Email address') }}</p></li>
+                <li><p>{{ __('Phone number (optional)') }}</p></li>
+                <li><p>{{ __('Message content') }}</p></li>
+            </ul>
+
+            <p><strong>{{ __('Automatically through cookies and analytics tools') }}</strong></p>
+
+            <ul class="list-disc pl-12">
+                <li><p>{{ __('IP address') }}</p></li>
+                <li><p>{{ __('Device and browser information') }}</p></li>
+                <li><p>{{ __('Pages visited and time spent on the website') }}</p></li>
+            </ul>
         </div>
 
         <div class="flex flex-col gap-4">
             <h6>{{ __('3. Purpose of Data Processing') }}</h6>
-            
-            <p>{{ __('Personal data will be used to:') }}</p>
+
+            <p>{{ __('We process personal data for the following purposes:') }}</p>
 
             <ul class="list-disc pl-12">
-                <li><p>{{ __('Respond to inquiries and contact requests.') }}</p></li>
-                <li><p>{{ __('Manage quote requests.') }}</p></li>
-                <li><p>{{ __('Improve website performance through statistical analysis.') }}</p></li>
-                <li><p>{{ __('Ensure site security.') }}</p></li>
-                <li><p>{{ __('Marketing activities: We use personal data for marketing purposes, including:') }}
-                    <ul class="list-decimal pl-12">
-                        <li><p>{{ __('Email marketing: Sending newsletters, updates, and promotions related to our services.') }}</p></li>
-                        <li><p>{{ __('Personalized advertising: Using data for targeted ad campaigns on platforms like Facebook Ads and Google Ads.') }}</p></li>
-                    </ul>
-                </p></li>
+                <li><p>{{ __('Responding to contact requests and inquiries.') }}</p></li>
+                <li><p>{{ __('Providing information about our services.') }}</p></li>
+                <li><p>{{ __('Improving website functionality and performance through analytics.') }}</p></li>
+                <li><p>{{ __('Maintaining the security and integrity of the website.') }}</p></li>
             </ul>
-            <p>{{ __('Data will not be shared with third parties beyond these purposes.') }}</p>
+
+            <p>{{ __('We do not sell or rent personal data to third parties.') }}</p>
         </div>
-        
+
         <div class="flex flex-col gap-4">
             <h6>{{ __('4. Use of Cookies') }}</h6>
-            
-            <p>{{ __('At Chibalancetherapies.com, we use cookies to:') }}</p>
+
+            <p>{{ __('This website uses cookies to improve user experience and analyze website traffic.') }}</p>
+
+            <p>{{ __('Examples of cookies that may be used include:') }}</p>
 
             <ul class="list-disc pl-12">
-                <li><p>{{ __('Enhance user experience.') }}</p></li>
-                <li><p>{{ __('Conduct traffic analysis (Google Analytics).') }}</p></li>
-                <li><p>{{ __('Personalize ads (for advertising campaigns on Facebook and Google).') }}</p></li>
+                <li><p>{{ __('Essential cookies required for website functionality (such as session cookies).') }}</p></li>
+                <li><p>{{ __('Analytics cookies used to understand how visitors interact with the website (for example Google Analytics).') }}</p></li>
+                <li><p>{{ __('Consent cookies that remember your cookie preferences.') }}</p></li>
             </ul>
-            <p>{{ __('You can manage cookies from the initial banner or by configuring your browser settings.') }}</p>
+
+            <p>{{ __('You can manage or withdraw your cookie consent through the cookie banner or by adjusting your browser settings.') }}</p>
         </div>
-        
+
         <div class="flex flex-col gap-4">
             <h6>{{ __('5. Legal Basis for Processing') }}</h6>
+
+            <p>{{ __('Under the GDPR, we rely on the following legal bases for processing personal data:') }}</p>
+
             <ul class="list-disc pl-12">
-                <li><p>{{ __('Explicit user consent when subscribing to our newsletters or agreeing to receive personalized advertising.') }}</p></li>
-                <li><p>{{ __('Compliance with legal obligations.') }}</p></li>
-                <li><p>{{ __('Legitimate interests in improving our site and services.') }}</p></li>
+                <li><p>{{ __('User consent when submitting contact forms or accepting cookies.') }}</p></li>
+                <li><p>{{ __('Legitimate interest in improving our website and services.') }}</p></li>
+                <li><p>{{ __('Compliance with legal obligations when required.') }}</p></li>
             </ul>
         </div>
-        
+
         <div class="flex flex-col gap-4">
             <h6>{{ __('6. Data Retention') }}</h6>
-            <p>{{ __('Personal data will be retained as long as necessary for the described purposes or until the user requests its deletion.') }}</p>
+
+            <p>{{ __('Personal data will only be kept for as long as necessary to fulfill the purposes described in this policy or until a user requests its deletion, unless a longer retention period is required by law.') }}</p>
         </div>
 
         <div class="flex flex-col gap-4">
             <h6>{{ __('7. User Rights') }}</h6>
 
-            <p>{{ __('Users have the right to:') }}</p>
+            <p>{{ __('Under the GDPR, users have the right to:') }}</p>
 
             <ul class="list-disc pl-12">
                 <li><p>{{ __('Access their personal data.') }}</p></li>
-                <li><p>{{ __('Correct inaccurate data.') }}</p></li>
-                <li><p>{{ __('Request data deletion.') }}</p></li>
-                <li><p>{{ __('Restrict processing.') }}</p></li>
-                <li><p>{{ __('Withdraw granted consent.') }}</p></li>
+                <li><p>{{ __('Request correction of inaccurate information.') }}</p></li>
+                <li><p>{{ __('Request deletion of their personal data.') }}</p></li>
+                <li><p>{{ __('Restrict or object to data processing.') }}</p></li>
+                <li><p>{{ __('Withdraw previously given consent.') }}</p></li>
             </ul>
 
-            <p>{{ __('To exercise your rights, you can contact us at: ') }}<a href="mailto:chibalancetherapies@gmail.com">chibalancetherapies@gmail.com</a>.</p>
+            <p>{{ __('To exercise these rights, please contact us at ') }}<a href="mailto:chibalancetherapies@gmail.com">chibalancetherapies@gmail.com</a>.</p>
         </div>
 
         <div class="flex flex-col gap-4">
             <h6>{{ __('8. Security Measures') }}</h6>
 
-            <p>{{ __('The site is protected with:') }}</p>
+            <p>{{ __('We take reasonable technical and organizational measures to protect personal data, including:') }}</p>
 
             <ul class="list-disc pl-12">
-                <li><p>{{ __('SSL certificate to encrypt communications.') }}</p></li>
-                <li><p>{{ __('Storage on secure servers.') }}</p></li>
-                <li><p>{{ __('Regular backups.') }}</p></li>
+                <li><p>{{ __('SSL encryption to secure communications.') }}</p></li>
+                <li><p>{{ __('Secure hosting infrastructure.') }}</p></li>
+                <li><p>{{ __('Regular backups and monitoring.') }}</p></li>
             </ul>
         </div>
-        
-        <div class="flex flex-col gap-4">
-            <h6>{{ __('9. Modifications') }}</h6>
 
-            <p>{{ __('We reserve the right to update this Privacy Policy based on legal or technical changes. The last update date will appear at the beginning of the document.') }}</p>
+        <div class="flex flex-col gap-4">
+            <h6>{{ __('9. Policy Updates') }}</h6>
+
+            <p>{{ __('We may update this Privacy Policy from time to time to reflect legal, technical, or operational changes. The latest update date will always appear at the top of this document.') }}</p>
         </div>
 
         <div class="flex flex-col gap-4">
             <h6>{{ __('10. Contact') }}</h6>
 
-            <p>{{ __('For inquiries or requests related to this policy, contact us at: ') }}<a href="mailto:chibalancetherapies@gmail.com">chibalancetherapies@gmail.com</a>.</p>
+            <p>{{ __('If you have questions about this Privacy Policy or how your data is handled, you can contact us at ') }}<a href="mailto:chibalancetherapies@gmail.com">chibalancetherapies@gmail.com</a>.</p>
         </div>
     </div>
 </x-app-layout>

@@ -25,7 +25,7 @@
                                     </div>
                                 </div>
                                 <div class="flex gap-2">
-                                    <x-button href="{{ $product->link }}" class="btn btn-primary" target="_blank">book <x-icons.booking /></x-button>
+                                    <x-button href="https://wa.me/353852727422?text={{ urlencode('Hello! I would like more information about ' . $product->title) }}" class="btn btn-primary" target="_blank">whatsapp <x-icons.whatsapp /></x-button>
                                     <x-button href="{{ route('product.view', ['category' => $product->categories->first()->slug, 'product' => $product->slug]) }}" class="btn btn-secondary">See more <x-icons.send /></x-button>
                                 </div>
                             </div>
@@ -53,7 +53,7 @@
                                 <h6>{{ $product->title }}</h6>
                             </div>
                             <div class="flex">
-                                <x-button class="btn btn-primary px-2" href="{{ $product->link }}"> <x-icons.booking /></x-button>
+                                <x-button class="btn btn-primary px-2" href="https://wa.me/353852727422?text={{ urlencode('Hello! I would like more information about ' . $product->title) }}"> <x-icons.whatsapp /></x-button>
                                 <x-button class="btn" href="{{ route('product.view', ['category' => $product->categories->first()->slug, 'product' => $product->slug]) }}"> <x-icons.send /></x-button>
                             </div>
                         </div>
