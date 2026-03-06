@@ -58,6 +58,22 @@ export function setProducts(state, [loading, data = null]) {
   state.products.loading = loading;
 }
 
+export function setAppointments(state, [loading, data = null]) {
+  if (data) {
+    state.appointments = {
+      ...state.appointments,
+      data: data.data,
+      links: data.meta?.links,
+      page: data.meta?.current_page,
+      limit: data.meta?.per_page,
+      from: data.meta?.from,
+      to: data.meta?.to,
+      total: data.meta?.total,
+    }
+  }
+  state.appointments.loading = loading
+}
+
 export function setAbouts(state, [loading, data = null]) {
 
   if (data) {

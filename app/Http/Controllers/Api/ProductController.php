@@ -27,7 +27,7 @@ class ProductController extends Controller
      */
     public function index(Request $request)
     {
-        $perPage = $request->get('per_page');
+        $perPage = $request->get('per_page', 20);
         $search = $request->get('search', '');
         $categorySlug = $request->get('category', '');  // Agregar parámetro category
 

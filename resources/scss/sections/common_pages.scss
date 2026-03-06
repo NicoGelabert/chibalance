@@ -1,0 +1,12 @@
+.common_pages_view{
+    .common_pages_hero{
+        @apply flex flex-col justify-center mt-14 px-4 gap-8
+        py-12 lg:py-24;
+        h2, h5, p{
+            @apply text-center
+        }
+    }
+    .common_pages_content{
+        @apply bg-blue_light py-12 px-4;
+    }
+}

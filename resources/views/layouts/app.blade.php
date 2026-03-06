@@ -90,6 +90,13 @@
             
             @include('layouts.footer')
         </div>
+        <div id="booking-modal-root">
+            <booking-modal
+                v-if="showBookingModal"
+                :product="selectedProduct"
+                @close="closeBookingModal"
+            ></booking-modal>
+        </div>
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     </body>
 </html>
@@ -113,4 +120,5 @@
             }
         });
     });
+  
 </script>

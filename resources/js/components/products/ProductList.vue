@@ -47,12 +47,21 @@
                             </div>
                             <h5 class="w-fit">{{ product.title }}</h5>
                             <div class="flex gap-4 card-buttons">
-                                <a v-if="product.link" :href="product.link" target="_blank" class="btn btn-primary btn-products_list"><span>Book </span><BookIcon /></a>
+                                <button @click="openBooking(product)" class="btn btn-primary btn-products_list">
+                                    <span>Book </span><BookIcon />
+                                </button>
+
                                 <a :href="'/all/' + product.categories[0]?.slug + '/' + product.slug" class="btn btn-secondary btn-products_list"><span>See More </span><SendIcon /></a>
                             </div>
                         </div>
                     </li>
                 </ul>
+                <BookingModal 
+                    v-if="showBookingModal" 
+                    :product="selectedProduct" 
+                    @close="closeBooking" 
+                />
+
             </div>
         </div>
     </div>
@@ -62,12 +71,14 @@
 import axios from 'axios';
 import BookIcon from '../icons/BookIcon.vue';
 import SendIcon from '../icons/SendIcon.vue';
+import BookingModal from '../BookingModal.vue';
 
 export default {
     components: {
         // Registra el componente
         BookIcon,
         SendIcon,
+        BookingModal,
     },
     data() {
         return {
@@ -76,6 +87,8 @@ export default {
             loading: true,  // Para manejar el estado de carga
             error: null,    // Para manejar errores de la API
             selectedCategory: null,
+            showBookingModal: false,
+            selectedProduct: null,
             };
         },
     mounted() {
@@ -110,6 +123,14 @@ export default {
             this.selectedCategory = slug;
             this.loading = true;  // Activamos el estado de carga
             this.fetchProducts();
+        },
+        openBooking(product) {
+            this.selectedProduct = product;
+            this.showBookingModal = true;
+        },
+        closeBooking() {
+            this.showBookingModal = false;
+            this.selectedProduct = null;
         }
     }
 };

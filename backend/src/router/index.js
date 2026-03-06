@@ -10,6 +10,8 @@ import HomeHeroBanners from "../views/HomeHeroBanners/HomeHeroBanners.vue";
 import Categories from "../views/Categories/Categories.vue";
 import Products from "../views/Products/Products.vue";
 import ProductView from "../views/Products/ProductView.vue";
+import Appointments from "../views/Appointments/Appointments.vue";
+import AppointmentView from "../views/Appointments/AppointmentView.vue";
 import Abouts from "../views/Abouts/Abouts.vue";
 import AboutView from "../views/Abouts/AboutView.vue";
 import Articles from "../views/Articles/Articles.vue";
@@ -71,6 +73,24 @@ const routes = [
         path: 'products/:id',
         name: 'app.products.edit',
         component: ProductView,
+        props: {
+          id: (value) => /^\d+$/.test(value)
+        }
+      },
+      {
+        path: 'appointments',
+        name: 'app.appointments',
+        component: Appointments
+      },
+      {
+        path: 'appointments/create',
+        name: 'app.appointments.create',
+        component: AppointmentView
+      },
+      {
+        path: 'appointments/:id',
+        name: 'app.appointments.edit',
+        component: AppointmentView,
         props: {
           id: (value) => /^\d+$/.test(value)
         }

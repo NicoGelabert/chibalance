@@ -22,7 +22,7 @@
             <x-button href="/intake-form" class="btn btn-secondary">intake <x-icons.login /></x-button>
         </div>
         <div>
-            <x-button href="https://calendly.com/chibalancetherapies" target="_blank" class="btn btn-primary">book <x-icons.booking /></x-button>
+            <x-button href="/all" target="_blank" class="btn btn-primary">book <x-icons.booking /></x-button>
         </div>
         <x-hamburguer />
     </div>

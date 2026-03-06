@@ -1,6 +1,7 @@
 export const HOMEHEROBANNERS_PER_PAGE = 10
 export const CATEGORIES_PER_PAGE = 10
 export const PRODUCTS_PER_PAGE = 10
+export const APPOINTMENTS_PER_PAGE = 10
 export const ABOUTS_PER_PAGE = 10
 export const ARTICLES_PER_PAGE = 10
 export const AUTHORS_PER_PAGE = 10

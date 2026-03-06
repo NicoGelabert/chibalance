@@ -73,11 +73,11 @@
                     </div>
         
                     <div class="flex gap-4">
-                        @if ($product->link)
-                        <x-button class="btn btn-primary" href="{{ $product->link }}" >
+                        <x-button type="button"
+                            class="btn btn-primary"
+                            onclick="openBookingModal({ id: {{ $product->id }}, title: '{{ $product->title }}' })">
                             Book <x-icons.booking />
                         </x-button>
-                        @endif
                         <x-button class="btn btn-secondary" href="https://wa.me/353852727422?text={{ urlencode('Hello! I would like more information about ' . $product->title) }}" target="_blank">Whatsapp <x-icons.whatsapp /></x-button>
                     </div>
                 </div>

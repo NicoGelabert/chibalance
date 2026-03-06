@@ -57,8 +57,7 @@
                :value="props.modelValue"
                @input="emit('update:modelValue', $event.target.value)"
                :class="inputClasses"
-               :placeholder="label"
-               step="0.01"/>
+               :placeholder="label"/>
       </template>
       <span v-if="append"
             class="inline-flex items-center px-3 rounded-r-md border border-l-0 border-gray-300 bg-gray-50 text-gray-500 text-sm">

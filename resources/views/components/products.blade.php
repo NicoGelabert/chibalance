@@ -25,7 +25,14 @@
                                     </div>
                                 </div>
                                 <div class="flex gap-2">
-                                    <x-button href="{{ $product->link }}" class="btn btn-primary" target="_blank">book <x-icons.booking /></x-button>
+                                    <x-button
+                                        href="javascript:void(0)"
+                                        class="btn btn-primary"
+                                        onclick='openBookingModal({!! htmlspecialchars(json_encode($product), ENT_QUOTES, "UTF-8") !!})'
+                                        >
+                                        Book <x-icons.booking />
+                                    </x-button>
+
                                     <x-button href="{{ route('product.view', ['category' => $product->categories->first()->slug, 'product' => $product->slug]) }}" class="btn btn-secondary">See more <x-icons.send /></x-button>
                                 </div>
                             </div>
@@ -53,7 +60,13 @@
                                 <h6>{{ $product->title }}</h6>
                             </div>
                             <div class="flex">
-                                <x-button class="btn btn-primary px-2" href="{{ $product->link }}"> <x-icons.booking /></x-button>
+                                <x-button
+                                    href="javascript:void(0)"
+                                    class="btn btn-primary"
+                                    onclick='openBookingModal({!! htmlspecialchars(json_encode($product), ENT_QUOTES, "UTF-8") !!})'
+                                >
+                                    <x-icons.booking />
+                                </x-button>
                                 <x-button class="btn" href="{{ route('product.view', ['category' => $product->categories->first()->slug, 'product' => $product->slug]) }}"> <x-icons.send /></x-button>
                             </div>
                         </div>

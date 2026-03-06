@@ -24,6 +24,7 @@
 import { 
     ArchiveBoxIcon,
     BuildingStorefrontIcon,
+    CalendarDaysIcon,
     ChevronLeftIcon,
     FingerPrintIcon,
     IdentificationIcon,
@@ -48,6 +49,7 @@ const menuItems = ref([
     { name: 'homeherobanners', label: 'Home Hero Banner', route: 'app.homeherobanners', icon: PhotoIcon },
     { name: 'categories', label: 'Categories', route: 'app.categories', icon: MegaphoneIcon },
     { name: 'products', label: 'Treatments', route: 'app.products', icon: ArchiveBoxIcon },
+    { name: 'appointments', label: 'Appointments', route: 'app.appointments', icon: CalendarDaysIcon },
     { name: 'abouts', label: 'About', route: 'app.abouts', icon: FingerPrintIcon },
     { name: 'articles', label: 'Articles', route: 'app.articles', icon: NewspaperIcon },
     { name: 'authors', label: 'Author', route: 'app.authors', icon: IdentificationIcon },

@@ -288,6 +288,85 @@ export function deleteProduct({commit}, id) {
   return axiosClient.delete(`/products/${id}`)
 }
 
+// APPOINTMENTS
+// Obtener listado de citas
+export function getAppointments({ commit, state }, { url = null, search = '', per_page, sort_field, sort_direction } = {}) {
+  commit('setAppointments', [true])
+  url = url || '/appointments'
+
+  const params = {
+    per_page: state.appointments.limit,
+  }
+
+  return axiosClient.get(url, {
+    params: {
+      ...params,
+      search,
+      per_page,
+      sort_field,
+      sort_direction
+    }
+  })
+    .then((response) => {
+      commit('setAppointments', [false, response.data])
+    })
+    .catch(() => {
+      commit('setAppointments', [false])
+    })
+}
+
+// Obtener una cita específica
+export function getAppointment({ commit }, id) {
+  return axiosClient.get(`/appointments/${id}`)
+}
+
+// Crear una nueva cita
+export function createAppointment({ commit }, appointment) {
+  const form = new FormData()
+
+  form.append('first_name', appointment.first_name)
+  form.append('last_name', appointment.last_name)
+  form.append('email', appointment.email)
+  form.append('contact_number', appointment.contact_number)
+  form.append('product_id', appointment.product_id)
+  form.append('date', appointment.date)
+  form.append('start_time', appointment.start_time)
+  form.append('end_time', appointment.end_time || '')
+  form.append('status', appointment.status || 'pending')
+  form.append('notes', appointment.notes || '')
+  form.append('cancel_token', appointment.cancel_token || '')
+
+  return axiosClient.post('/appointments', form)
+}
+
+// Actualizar una cita existente
+export function updateAppointment({ commit }, appointment) {
+  const id = appointment.id
+
+  const form = new FormData()
+  form.append('id', id)
+  form.append('first_name', appointment.first_name)
+  form.append('last_name', appointment.last_name)
+  form.append('email', appointment.email)
+  form.append('contact_number', appointment.contact_number)
+  form.append('product_id', appointment.product_id)
+  form.append('date', appointment.date)
+  form.append('start_time', appointment.start_time)
+  form.append('end_time', appointment.end_time || '')
+  form.append('status', appointment.status || 'pending')
+  form.append('notes', appointment.notes || '')
+  form.append('cancel_token', appointment.cancel_token || '')
+  form.append('_method', 'PUT')
+
+  return axiosClient.post(`/appointments/${id}`, form)
+}
+
+// Eliminar una cita
+export function deleteAppointment({ commit }, id) {
+  return axiosClient.delete(`/appointments/${id}`)
+}
+
+
 // ABOUT
 export function getAbouts({commit, state}, {url = null, search = '', per_page, sort_field, sort_direction} = {}) {
   commit('setAbouts', [true])

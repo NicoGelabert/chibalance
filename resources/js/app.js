@@ -8,7 +8,34 @@ import 'flowbite';
 import Splide from '@splidejs/splide';
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
 import ProductList from './components/products/ProductList.vue';
+import BookingModal from './components/BookingModal.vue';
 
+const bookingApp = createApp({
+  data() {
+    return {
+      showBookingModal: false,
+      selectedProduct: null,
+    };
+  },
+  methods: {
+    openBookingModal(product) {
+      this.selectedProduct = product;
+      this.showBookingModal = true;
+    },
+    closeBookingModal() {
+      this.showBookingModal = false;
+      this.selectedProduct = null;
+    },
+  },
+});
+
+bookingApp.component('booking-modal', BookingModal);
+bookingApp.mount('#booking-modal-root');
+
+// Exponer función global para abrir el modal desde cualquier parte
+window.openBookingModal = (product) => {
+  bookingApp._instance.proxy.openBookingModal(product);
+};
 const productIndex = createApp({});
 productIndex.component('product-list', ProductList);
 productIndex.mount('#product-index');
@@ -111,34 +138,34 @@ document.addEventListener("alpine:init", async () => {
 Alpine.start();
 
 // dark mode
-const toggleThemeButtons = document.querySelectorAll('.toggle-theme');
-function toggleTheme() {
-  document.documentElement.classList.toggle('dark');
-  toggleThemeButtons.forEach(button => {
-    button.classList.toggle('dark');
-  });
+// const toggleThemeButtons = document.querySelectorAll('.toggle-theme');
+// function toggleTheme() {
+//   document.documentElement.classList.toggle('dark');
+//   toggleThemeButtons.forEach(button => {
+//     button.classList.toggle('dark');
+//   });
 
-  if (document.documentElement.classList.contains('dark')) {
-    localStorage.setItem('theme', 'dark');
-  } else {
-    localStorage.setItem('theme', 'light');
-  }
+//   if (document.documentElement.classList.contains('dark')) {
+//     localStorage.setItem('theme', 'dark');
+//   } else {
+//     localStorage.setItem('theme', 'light');
+//   }
 
-}
-toggleThemeButtons.forEach(button => {
-  button.addEventListener('click', toggleTheme);
-});
+// }
+// toggleThemeButtons.forEach(button => {
+//   button.addEventListener('click', toggleTheme);
+// });
 
-document.addEventListener('DOMContentLoaded', () => {
-  const savedTheme = localStorage.getItem('theme');
+// document.addEventListener('DOMContentLoaded', () => {
+//   const savedTheme = localStorage.getItem('theme');
 
-  if (savedTheme === 'dark') {
-    document.documentElement.classList.add('dark');
-    toggleThemeButtons.forEach(button => {
-      button.classList.add('dark');
-    });
-  }
-});
+//   if (savedTheme === 'dark') {
+//     document.documentElement.classList.add('dark');
+//     toggleThemeButtons.forEach(button => {
+//       button.classList.add('dark');
+//     });
+//   }
+// });
 // dark mode
 
 // SPLIDE

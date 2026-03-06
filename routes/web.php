@@ -4,6 +4,9 @@ use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\AvailabilityController;
+use App\Http\Controllers\GoogleCalendarController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ArticleController;
@@ -45,6 +48,15 @@ Route::middleware(['guestOrVerified'])->group(function () {
     //Productos 
     Route::get('/all', [ProductController::class, 'index'])->name('products.index');
     Route::get('/all/{category:slug}/{product:slug}', [ProductController::class, 'view'])->name('product.view');
+
+    Route::get('/availability', [AvailabilityController::class, 'availability']);
+    
+    Route::apiResource('appointments', AppointmentController::class)->only(['index','store','show','update','destroy']);
+    Route::get('/cancel-reservation/{token}', [AppointmentController::class, 'cancel']);
+    
+    //Calendario Google
+    Route::get('/google-calendar/connect', [GoogleCalendarController::class, 'redirectToGoogle']);
+    Route::get('/google-calendar/callback', [GoogleCalendarController::class, 'handleGoogleCallback'])->name('google-calendar.callback');
 
     //Categorías 
     Route::get('/categories', [CategoryController::class, 'index'])->name('category.index');
