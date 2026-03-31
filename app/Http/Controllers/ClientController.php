@@ -11,7 +11,7 @@ class ClientController extends Controller
 {
     public function create()
     {
-        $products = Product::all();
+        $products = Product::where('published', true)->get();
         return view('components.intake-form', ['products' => $products]);
     }
 
